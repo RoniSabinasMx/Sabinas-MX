@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SABINAS | Bienestar · Medicina Tradicional · Bacalar</title>
+    <meta name="description"
+        content="Sabinas — espacio de sanación ancestral en Bacalar. Masajes, ceremonias, temazcal y talleres holísticos con Roni.">
+    <meta property="og:title" content="SABINAS | Bienestar · Bacalar">
+    <meta property="og:description" content="Un rezo a las aguas, la memoria y la tierra.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+    <!-- ═══ HEADER ═══ -->
+    <header id="site-header" class="header-active">
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="SABINAS">
+            <span class="logo-fallback">SABINAS</span>
+        </div>
+        <nav class="nav-links" aria-label="Elementos">
+            <button class="nav-btn magnetic" data-element="agua" data-i18n="nav.agua">Agua</button>
+            <button class="nav-btn magnetic" data-element="aire" data-i18n="nav.aire">Aire</button>
+            <button class="nav-btn magnetic" data-element="fuego" data-i18n="nav.fuego">Fuego</button>
+            <button class="nav-btn magnetic" data-element="tierra" data-i18n="nav.tierra">Tierra</button>
+            <button class="nav-btn magnetic" data-element="eter" data-i18n="nav.eter">Éter</button>
+        </nav>
+        <button class="lang-btn" id="lang-toggle" aria-label="Cambiar idioma">ESP | ENG</button>
+    </header>
+
+    <!-- ═══ SECTION 1: HERO ═══ -->
+    <section id="hero" aria-label="Hero">
+        <img src="assets/images/hero.png" class="hero-media" alt="Laguna Bacalar" onerror="this.style.display='none'">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1 class="hero-wordmark">SABINAS</h1>
+            <p class="hero-sub">Bienestar · Medicina Tradicional · Bacalar</p>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <span data-i18n="hero.scroll_invite">Desliza para conectar</span>
+            <div class="scroll-track">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 2: ABOUT / RONI ═══ -->
+    <section id="about" aria-label="Quiénes somos">
+        <div class="about-grid">
+            <div class="about-left">
+                <h2 class="about-title reveal" data-i18n="about.title">Sabinas</h2>
+                <p class="about-sub reveal" data-i18n="about.subtitle">Bienestar · Medicina Tradicional · Bacalar</p>
+                <p class="about-text reveal" data-i18n="about.description"></p>
+            </div>
+            <div class="about-right">
+                <div class="roni-image reveal" data-parallax="-0.08">
+                    <img src="assets/images/roni.png" alt="Roni, fundadora de Sabinas"
+                        onerror="this.parentElement.classList.add('image-placeholder')">
+                </div>
+                <div class="roni-text">
+                    <h3 class="reveal" data-i18n="about.roni_title">Quién es Roni</h3>
+                    <p class="roni-origin reveal" data-i18n="about.roni_sub"></p>
+                    <p class="reveal" data-i18n="about.roni_description"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 3: ORACLE ═══ -->
+    <section id="oracle" aria-label="El Oráculo">
+        <div class="oracle-header">
+            <h2 class="reveal" data-i18n="oracle.title">El Oráculo de Servicios</h2>
+            <div class="oracle-line reveal"></div>
+        </div>
+        <div class="oracle-split">
+            <button class="oracle-path reveal" id="path-search" aria-label="Buscar servicio">
+                <span class="path-glyph">✦</span>
+                <h3 data-i18n="oracle.via_a_title">Ya sé lo que quiero</h3>
+                <p data-i18n="oracle.via_a_desc"></p>
+                <span class="path-arrow">→</span>
+            </button>
+            <button class="oracle-path reveal" id="path-quiz" aria-label="Cuestionario de servicios">
+                <span class="path-glyph">◈</span>
+                <h3 data-i18n="oracle.via_b_title">Descubre qué se aconseja para ti</h3>
+                <p data-i18n="oracle.via_b_desc"></p>
+                <span class="path-arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer id="site-footer">
+        <!-- Sponsor Marquee -->
+        <div class="marquee-section">
+            <p class="marquee-label" data-i18n="footer.sponsors_title">Nuestros Aliados</p>
+            <div class="marquee-mask">
+                <!-- sponsors rendered dynamically by app.js from Supabase -->
+                <div class="marquee-track" id="sponsor-list"></div>
+            </div>
+        </div>
+
+        <!-- 3-Column Grid -->
+        <div class="footer-grid">
+            <!-- Col 1 -->
+            <div class="footer-col">
+                <h4 data-i18n="footer.col1_title">Nuestros Elementos</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-el-link" data-i18n="nav.agua">Agua</a></li>
+                    <li><a href="#" class="footer-el-link" data-i18n="nav.aire">Aire</a></li>
+                    <li><a href="#" class="footer-el-link" data-i18n="nav.fuego">Fuego</a></li>
+                    <li><a href="#" class="footer-el-link" data-i18n="nav.tierra">Tierra</a></li>
+                    <li><a href="#" class="footer-el-link" data-i18n="nav.eter">Éter</a></li>
+                </ul>
+                <div class="footer-sub-links">
+                    <a href="#" class="footer-el-link" data-i18n="footer.experience_link">Conserva tu experiencia</a>
+                    <a href="#" class="footer-el-link" data-i18n="footer.colab_link">Colabora con nosotros</a>
+                </div>
+            </div>
+            <!-- Col 2 -->
+            <div class="footer-col footer-col--center">
+                <h4 data-i18n="footer.col2_title">Información General</h4>
+                <ul class="footer-info">
+                    <li><span class="footer-icon">◎</span><span data-i18n="footer.col2_location">Bacalar, Q. Roo</span>
+                    </li>
+                    <li><span class="footer-icon">◎</span><a href="tel:+529841802741" data-i18n="footer.col2_phone">+52
+                            984 180 2741</a></li>
+                    <li><span class="footer-icon">◎</span><a href="mailto:hola@sabinas.mx"
+                            data-i18n="footer.col2_email">hola@sabinas.mx</a></li>
+                    <li><span class="footer-icon">◎</span><span data-i18n="footer.col2_hours">Lun – Sáb ·
+                            8:00–18:00</span></li>
+                </ul>
+            </div>
+            <!-- Col 3: Calendar -->
+            <div class="footer-col">
+                <h4 data-i18n="footer.col3_title">Agenda</h4>
+                <div class="mini-cal-wrapper" id="calendar-trigger">
+                    <div id="mini-cal"></div>
+                    <p class="cal-hint">Toca el calendario para expandir</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-line"></div>
+            <p data-i18n="footer.rights">Sabinas · Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- ═══ OVERLAYS ═══ -->
+
+    <!-- Global Modal / Iframe -->
+    <div id="global-modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-bar">
+                <span id="modal-title" class="modal-title-text"></span>
+                <button class="modal-close" aria-label="Cerrar">✕</button>
+            </div>
+            <iframe id="modal-iframe" src="about:blank" title="Servicio"></iframe>
+            <div class="modal-footer">
+                <a id="modal-wa-btn" href="#" target="_blank" rel="noopener" class="wa-btn">Reservar por WhatsApp ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spotlight Search (Vía A) -->
+    <div id="spotlight-overlay" role="dialog" aria-modal="true" aria-label="Buscador de servicios">
+        <div class="spotlight-inner">
+            <button class="spot-close" id="close-spotlight" aria-label="Cerrar">✕</button>
+            <input type="text" id="spotlight-input" class="spotlight-input" data-i18n="oracle.search_placeholder"
+                placeholder="Busca un servicio…" autocomplete="off">
+            <div id="spotlight-results" class="spotlight-results"></div>
+        </div>
+    </div>
+
+    <!-- Oracle Questionnaire (Vía B) -->
+    <div id="oracle-overlay" role="dialog" aria-modal="true" aria-label="Cuestionario Oráculo">
+        <button class="spot-close" id="close-oracle" aria-label="Cerrar">✕</button>
+        <div id="quiz-container" class="q-card"></div>
+    </div>
+
+    <!-- Calendar Expanded -->
+    <div id="calendar-overlay" role="dialog" aria-modal="true" aria-label="Calendario">
+        <div class="cal-modal">
+            <button id="close-calendar" class="spot-close" aria-label="Cerrar">✕</button>
+            <div id="full-cal" class="full-cal-inner"></div>
+        </div>
+    </div>
+
+    <!-- Config must load BEFORE ES modules so Supabase client has credentials -->
+    <script src="config/config.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

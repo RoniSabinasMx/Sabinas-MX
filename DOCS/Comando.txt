@@ -1,0 +1,177 @@
+Hola, necesito crear un prompt para realizar un interfaz UI/UX frontend para una pagina web el proyecto funciona de esa forma:
+
+
+
+Mi cliente:
+
+
+
+*RONI SABINAS*
+
+
+
+Es originaria de las montañas de Oaxaca,  Aprendió de sus abuelas y de su
+
+madre el arte del rebozo, la medicina de las plantas y la fuerza del rezo. Su
+
+camino ha sido el de la sanación y el servicio.
+
+ Es Licenciada en Trabajo Social, especialista en educación ambiental,
+
+maestra en Antropología de la Salud,  con estudios en  medicina
+
+tradicional mexicana, Teosofía, permacultura, Astrología, ginecología
+
+natural, masoterapia, asthanga yoga, saberes ancestrales y cuentas del
+
+tiempo maya y mexica.
+
+Como parte de su viaje personal ha sostenido círculos de mujeres, creado
+
+proyectos socioambientales y colaborado en comunidades y ecoaldeas en
+
+México y Brasil. 
+
+En la danza, el temazcal, la meditación, la práctica de yoga, y la sanación
+
+a través de las terapias holísticas y ceremonias, ha encontrado lenguajes
+
+para armonizar cuerpo, mente y espíritu. 
+
+Sabinas es un rezo en el cual une todos los hilos de su historia para
+
+ofrecer servicios de bienestar, ceremonias y experiencias de reconexión, al
+
+servicio de la Madre Tierra. Hoy, en Bacalar, su visión es también educativa: impulsar un turismoconsciente y responsable, que honre la laguna, la comunidad y la vida que
+
+florece en este territorio sagrado
+
+
+
+La Marca:
+
+*SABINAS*:es una visión sobre el tejido y la uniòn de los saberes desde la raíces que guían el cause de las aguas, es un
+
+proyecto que intenta unir los sueños que nos permitan habitar nuestra Tierra con ternura y devoción. 
+
+Es un rezo a las aguas, a la memoria y a cada encuentro que hace especial nuestras vidas; a través de diversos caminos recorridos, entretejiendo los saberes, ciencia, arte y espiritualidad. 
+
+Con masajes, rituales, ceremonias, talleres y servicios que te lleven a un espacio seguro para relajarte y entregarte a la medicina de la Tierra para recordar tu fuerza y aprender de la sabiduría ancestral que habita en ti;
+
+
+
+Quiero crear un frontend que recuerde el holistico de esas practicas sin caer en lo excesivamente mistico:
+
+
+
+El sitio web (me gustaria fuera un SPA) debe ser conformada de : Header, Body (3 Secciones) y Footer;
+
+
+
+Debe poder funcionar con casi puro Iframe informativos y un total de 6 paginas por ahora:
+
+
+
+- La landing principal: Seccion de Video Vista completa, Seccion Quienes Somos y Quien es Roni, Seccion de Cuadro para Preguntas o reenvio,
+
+
+
+La seccion de "Video Vista completa" es lo unico que debe aparece para comenzar y necesito un smooth scroll;
+
+
+
+La seccion de "Quienes Somos y Quien es " necesito que estén en la misma seccion pero que se vea como si fueran parte integral el uno del otro;
+
+
+
+La seccion de "Cuadro de Pregunta o Reenvio" necesito un concepto para "Ya sé lo que quiero " y "Descubre que se aconseja por ti"; En el primer caso quiero que se guie la persona a través de un buscador simple que al seleccionar la experiencia te abra un Iframe con la información y el boton de reserva por whatsapp; En el segundo caso quiero que en el tablero/cuadro/frame se abra una serie de preguntas 8 o 9 que ayude a asignar el servicio correcto; 
+
+
+
+Header : Contiene el logo a la izquierda y a la derecha 5 botones representantes 4 elementos + el ether (sin menu de hamburguesa)
+
+
+
+Footer: Quisiera que la parte alta del footer tuviera un area de logos (6 por ahora pero que se puedan agregar más) para sus actuales Clientes-Sponsor, esos deben ser actualizables a través del panel de control del web y que al clicar en el logo lo reenvie a la pagina web del logo en cuestión; Abajo de ello necesito que hayan 3 columnas de índice e informativa: Izq. "Nuestros Elementos" - Agua Fuego Aire Tierra Ether y cada uno que ejecute lo mismo de los botones del Header, Conserva tu experiencia que abre un Iframe con otra información y foto (más que otro descriptivo) y Colabora con nosotros que abra igual un iframe con un formulario que pueda ser visible desde adentro del panel de control; 
+
+Cen. "Información General" - Numero de telefono, email, información de atención;
+
+Derecha un pequeño calendario con todas las actividades que tiene programadas en el mes, necesito que en el hacerle click, se haga más grande y pueda mostrar el calendario de forma sobrepuesta, despues de ello se puede seleccionar el actividad y con el botón de reserva mandar un mensaje preescrito a whatsapp, necesito que todo se personalice solo sin ai o extra a través de preguntas antes de que se haga el envio del mensaje con Wa.me;
+
+
+
+En la parte más abajo una linea divisoria y finalmente la escrita "Sabinas - Todos los derechos reservados"
+
+
+
+
+
+Colorimetria:
+
+
+
+Para todo el sitio los tonos deben ser:
+
+- Tierras, Marrones Pastel, Terracotas
+
+- Verdes Tenues 
+
+
+
+-Dependiendo de la categoria o elemento se necesita colores adaptativos pero siempre con un marco similar al que ya existe (verdes y terracotas) (para eso puedes darme unas opciones de 10 tonalidades que deben incluir coloración por la tipografia)
+
+
+
+Tipografia:
+
+
+
+- ayudame revisando la imagen de logo y encontrar una que podamos utilizar por ello; (gratis)
+
+
+
+Elementos visuales:
+
+
+
+- Crea con nano banana opciones de botones minimalistas y aesthetic con el seguimiento de la idea de los elementos: Agua, Aire, Ether, Fuego y Tierra;
+
+
+
+- Voy a necesitar que se creen las preguntas para descubrir los servicios;
+
+_________________________________________________________________________________
+
+
+
+Backend: Panel de Administración
+
+
+
+- Necesito que el panel de administración se pueda editar todo: colores, tipografias, servicios (eso conlleva que se debe de eliminar la ruta de respuestas hacia este servicio e reenviarla a otro de similar impacto);
+
+- Necesito que cree los iframe automaticamente por la cuestión de servicios y con ello eliminarlo sí necesario;
+
+- Necesito que calcule la cantidad de click recibidos en los logos;
+
+- Necesito que precree el mensaje que por cada servicio pero que pueda llegar a ser editable en el descriptivo;
+
+- Necesito poder agregar sí lo requiero en algún momento cualquier campo extra para los mensajes de wa.me;
+
+- Necesito un area donde se puedan revisar posibles candidatos que dejaron su información en el formulario de colabora con nostros;
+
+- Aconsejame que más funciones podría necesitar en la parte del Backend en base a la cuestión del sitio front;
+
+______________________________________________________________________________________
+
+Database:
+
+
+
+- Toda la información debe de de guardase en el database;
+
+- Nada Hardcodeado;
+
+- Necesito un i18n que haga la traducción en tiempo real sin pagos extras de la información que puede llegar de aqui;
+
+- Necesito que las fotos de storage sean seleccionables de forma visual del panel de control y poder ser seleccionadas a requerimiento; (Fotos como videos)

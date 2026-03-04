@@ -1,0 +1,517 @@
+{
+  "nav": {
+    "agua": "Agua",
+    "aire": "Aire",
+    "fuego": "Fuego",
+    "tierra": "Tierra",
+    "eter": "Éter"
+  },
+  "hero": {
+    "scroll_invite": "Desliza para conectar"
+  },
+  "about": {
+    "title": "Sabinas",
+    "subtitle": "Bienestar · Medicina Tradicional · Bacalar",
+    "description": "Sabinas es una visión sobre el tejido y la unión de los saberes desde las raíces que guían el cauce de las aguas. Un proyecto que intenta unir los sueños que nos permitan habitar nuestra Tierra con ternura y devoción. Es un rezo a las aguas, a la memoria y a cada encuentro que hace especial nuestras vidas.",
+    "roni_title": "Quién es Roni",
+    "roni_sub": "Originaria de las montañas de Oaxaca",
+    "roni_description": "Aprendió de sus abuelas y de su madre el arte del rebozo, la medicina de las plantas y la fuerza del rezo. Licenciada en Trabajo Social, especialista en educación ambiental, maestra en Antropología de la Salud, con estudios en medicina tradicional mexicana, Teosofía, permacultura, Astrología, ginecología natural, masoterapia, ashtanga yoga y saberes ancestrales. Ha sostenido círculos de mujeres, creado proyectos socioambientales y colaborado en ecoaldeas en México y Brasil."
+  },
+  "oracle": {
+    "title": "El Oráculo de Servicios",
+    "via_a_title": "Ya sé lo que quiero",
+    "via_a_desc": "Busca directamente la experiencia que resuena contigo.",
+    "via_b_title": "Descubre qué se aconseja para ti",
+    "via_b_desc": "Permite que el oráculo te guíe hacia tu medicina ideal.",
+    "search_placeholder": "Busca un servicio...",
+    "no_results": "No se encontraron servicios. Intenta con otra búsqueda.",
+    "q1": "¿Cómo deseas vivir esta experiencia?",
+    "q1_a": "En completa intimidad (Solo yo)",
+    "q1_b": "Con mi compañero/a de camino (Parejas)",
+    "q1_c": "En la energía de la comunidad (Grupal)",
+    "q2": "¿Hacia dónde necesita ir tu atención hoy?",
+    "q2_a": "Al cuerpo físico — masajes y liberación",
+    "q2_b": "Al espíritu y la energía — ceremonias",
+    "q2_c": "A la mente y el aprendizaje — talleres",
+    "q3": "¿Qué nivel de inmersión buscas?",
+    "q3_a": "Una pausa suave y restauradora (1-2 hrs)",
+    "q3_b": "Un trabajo profundo y transformador (medio día)",
+    "q3_c": "Una inmersión total (retiro / día completo)",
+    "q4_cuerpo": "¿Qué textura sanará mejor tu cuerpo hoy?",
+    "q4_cuerpo_a": "La fluidez del Agua — masajes fluidos, laguna",
+    "q4_cuerpo_b": "La contención de la Tierra — arcilla, presión profunda",
+    "q4_cuerpo_c": "El calor del Fuego — piedras calientes, vapor",
+    "q4_espiritu": "¿Qué forma de contacto buscas con lo sagrado?",
+    "q4_espiritu_a": "Fuego y transformación — temazcal, rezo",
+    "q4_espiritu_b": "Agua y pureza — ceremonias en la laguna",
+    "q4_espiritu_c": "Tierra y raíces — plantas, herbolaria",
+    "q4_mente": "¿Qué tipo de sabiduría te llama?",
+    "q4_mente_a": "Astros y tiempo — astrología, calendario maya",
+    "q4_mente_b": "Tierra y plantas — permacultura, herbolaria",
+    "q4_mente_c": "Cuerpo y movimiento — yoga, meditación",
+    "q5": "En una palabra, tu intención al salir de Sabinas será...",
+    "q5_a": "Enraizar",
+    "q5_b": "Soltar",
+    "q5_c": "Comprender",
+    "q5_d": "Renacer",
+    "results_title": "Tu medicina sugerida",
+    "results_sub": "El oráculo ha hablado. Estos caminos resuenan contigo:",
+    "reserve_btn": "Reservar por WhatsApp",
+    "restart": "Explorar de nuevo",
+    "close": "Cerrar"
+  },
+  "footer": {
+    "sponsors_title": "Nuestros Aliados",
+    "col1_title": "Nuestros Elementos",
+    "col2_title": "Información General",
+    "col2_phone": "+52 984 180 2741",
+    "col2_email": "hola@sabinas.mx",
+    "col2_location": "Bacalar, Quintana Roo, México",
+    "col2_hours": "Lun – Sáb · 8:00 – 18:00",
+    "col3_title": "Agenda tu Experiencia",
+    "colab_link": "Colabora con nosotros",
+    "experience_link": "Conserva tu experiencia",
+    "rights": "Sabinas · Todos los derechos reservados"
+  },
+  "whatsapp_number": "529841802741",
+  "sponsors": [
+    {
+      "name": "Laguna",
+      "url": "#"
+    },
+    {
+      "name": "Amate",
+      "url": "#"
+    },
+    {
+      "name": "Raíz",
+      "url": "#"
+    },
+    {
+      "name": "Selva",
+      "url": "#"
+    },
+    {
+      "name": "Tulum",
+      "url": "#"
+    },
+    {
+      "name": "Bacalar",
+      "url": "#"
+    }
+  ],
+  "services": [
+    {
+      "id": "masaje-relajante",
+      "name": "Masaje Relajante",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "agua",
+      "duration": "60 min",
+      "wa": "Hola Roni 🌿 Me gustaría reservar un *Masaje Relajante* (60 min). ¿Tienes disponibilidad para el día {{date}}?"
+    },
+    {
+      "id": "deep-tissue",
+      "name": "Masaje Deep Tissue",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "medio",
+      "element": "tierra",
+      "duration": "75 min",
+      "wa": "Hola Roni 🌱 Quisiera reservar un *Masaje Deep Tissue* (75 min) para el {{date}}."
+    },
+    {
+      "id": "masaje-holistico",
+      "name": "Masaje Holístico Energético",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "eter",
+      "duration": "75 min",
+      "wa": "Hola Roni ✨ Me gustaría vivir el *Masaje Holístico Energético* el {{date}}."
+    },
+    {
+      "id": "masaje-piedra",
+      "name": "Masaje Piedra Caliente",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "fuego",
+      "duration": "90 min",
+      "wa": "Hola Roni 🔥 Quisiera reservar el *Masaje Piedra Caliente* (90 min) para el {{date}}."
+    },
+    {
+      "id": "masaje-mexicano",
+      "name": "Masaje Mexicano",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "medio",
+      "element": "tierra",
+      "duration": "75 min",
+      "wa": "Hola Roni 🌿 Me interesa el *Masaje Mexicano* para el {{date}}."
+    },
+    {
+      "id": "masaje-thai",
+      "name": "Masaje Thai",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "medio",
+      "element": "aire",
+      "duration": "90 min",
+      "wa": "Hola Roni 🌬️ Quisiera reservar el *Masaje Thai* para el {{date}}."
+    },
+    {
+      "id": "masaje-espejo",
+      "name": "Masaje Espejo 4 Manos",
+      "category": "cuerpo",
+      "modality": [
+        "indiv",
+        "pareja"
+      ],
+      "intensity": "suave",
+      "element": "agua",
+      "duration": "90 min",
+      "wa": "Hola Roni 🌊 Quisiera reservar el *Masaje Espejo 4 Manos* para el {{date}}."
+    },
+    {
+      "id": "cacao-amor",
+      "name": "Cacao Amor",
+      "category": "espiritu",
+      "modality": [
+        "indiv",
+        "pareja"
+      ],
+      "intensity": "suave",
+      "element": "fuego",
+      "duration": "2 hrs",
+      "wa": "Hola Roni 🍫 Me gustaría vivir la experiencia de *Cacao Amor* el {{date}}."
+    },
+    {
+      "id": "sana-sana",
+      "name": "Sana Sana",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "tierra",
+      "duration": "60 min",
+      "wa": "Hola Roni 🌿 Quisiera reservar *Sana Sana* para el {{date}}."
+    },
+    {
+      "id": "exfoliacion",
+      "name": "Exfoliación Profunda",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "tierra",
+      "duration": "60 min",
+      "wa": "Hola Roni 🌱 Me gustaría una *Exfoliación Profunda* para el {{date}}."
+    },
+    {
+      "id": "limpia",
+      "name": "Limpia Tradicional",
+      "category": "espiritu",
+      "modality": [
+        "indiv",
+        "pareja",
+        "grupal"
+      ],
+      "intensity": "suave",
+      "element": "tierra",
+      "duration": "45–90 min",
+      "wa": "Hola Roni 🌿 Quisiera una *Limpia Tradicional* para el {{date}}. (Personal / Pareja / Negocio / Proyecto)"
+    },
+    {
+      "id": "reiki",
+      "name": "Reiki",
+      "category": "espiritu",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "eter",
+      "duration": "60 min",
+      "wa": "Hola Roni ✨ Me gustaría una sesión de *Reiki* para el {{date}}."
+    },
+    {
+      "id": "biomagnetismo",
+      "name": "Biomagnetismo",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "medio",
+      "element": "tierra",
+      "duration": "75 min",
+      "wa": "Hola Roni 🌿 Quisiera reservar una sesión de *Biomagnetismo* para el {{date}}."
+    },
+    {
+      "id": "barra-access",
+      "name": "Barra de Access",
+      "category": "espiritu",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "eter",
+      "duration": "60 min",
+      "wa": "Hola Roni ✨ Me gustaría reservar *Barra de Access* para el {{date}}."
+    },
+    {
+      "id": "janzu",
+      "name": "Janzu",
+      "category": "cuerpo",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "agua",
+      "duration": "75 min",
+      "wa": "Hola Roni 🌊 Quisiera vivir la experiencia de *Janzu* el {{date}}."
+    },
+    {
+      "id": "ritual-metamorfosis",
+      "name": "Ritual METAMORFÓSIS – Cierre de Ciclos",
+      "category": "espiritu",
+      "modality": [
+        "indiv",
+        "pareja"
+      ],
+      "intensity": "total",
+      "element": "fuego",
+      "duration": "3 hrs",
+      "wa": "Hola Roni 🔥 Me gustaría reservar el *Ritual Metamorfósis – Cierre de Ciclos* para el {{date}}."
+    },
+    {
+      "id": "ritual-animales",
+      "name": "Ritual Animales de Poder",
+      "category": "espiritu",
+      "modality": [
+        "indiv",
+        "grupal"
+      ],
+      "intensity": "medio",
+      "element": "tierra",
+      "duration": "2 hrs",
+      "wa": "Hola Roni 🌿 Quiero participar en el *Ritual Animales de Poder* del {{date}}."
+    },
+    {
+      "id": "ritual-xochiquetzal",
+      "name": "Ritual XOCHIQUETZAL",
+      "category": "espiritu",
+      "modality": [
+        "grupal"
+      ],
+      "intensity": "medio",
+      "element": "fuego",
+      "duration": "2 hrs",
+      "wa": "Hola Roni 🌸 Quisiera asistir al *Ritual Xochiquetzal* del {{date}}."
+    },
+    {
+      "id": "aquaterra",
+      "name": "AQUATERRA",
+      "category": "espiritu",
+      "modality": [
+        "indiv",
+        "pareja",
+        "grupal"
+      ],
+      "intensity": "total",
+      "element": "agua",
+      "duration": "3 hrs",
+      "wa": "Hola Roni 🌊 Me gustaría vivir *AQUATERRA* el {{date}}."
+    },
+    {
+      "id": "ceremonia-union",
+      "name": "Ceremonia Unión",
+      "category": "espiritu",
+      "modality": [
+        "pareja",
+        "grupal"
+      ],
+      "intensity": "total",
+      "element": "fuego",
+      "duration": "3 hrs",
+      "wa": "Hola Roni 🌿 Quisiera reservar la *Ceremonia Unión* para el {{date}}."
+    },
+    {
+      "id": "consagracion-cacao",
+      "name": "Consagración de Cacao",
+      "category": "espiritu",
+      "modality": [
+        "grupal"
+      ],
+      "intensity": "medio",
+      "element": "fuego",
+      "duration": "2 hrs",
+      "wa": "Hola Roni 🍫 Me gustaría asistir a la *Consagración de Cacao* del {{date}}."
+    },
+    {
+      "id": "ceremonia-vuelta-sol",
+      "name": "Ceremonia Vuelta al Sol",
+      "category": "espiritu",
+      "modality": [
+        "grupal"
+      ],
+      "intensity": "total",
+      "element": "fuego",
+      "duration": "4 hrs",
+      "wa": "Hola Roni ☀️ Quiero participar en la *Ceremonia Vuelta al Sol* del {{date}}."
+    },
+    {
+      "id": "baby-blessingway",
+      "name": "Baby Blessingway",
+      "category": "espiritu",
+      "modality": [
+        "grupal"
+      ],
+      "intensity": "medio",
+      "element": "agua",
+      "duration": "3 hrs",
+      "wa": "Hola Roni 🌸 Quisiera reservar un *Baby Blessingway* para el {{date}}."
+    },
+    {
+      "id": "aniversario-luna-miel",
+      "name": "Aniversario – Luna de Miel",
+      "category": "espiritu",
+      "modality": [
+        "pareja"
+      ],
+      "intensity": "total",
+      "element": "agua",
+      "duration": "4 hrs",
+      "wa": "Hola Roni 🌹 Quisiera reservar la experiencia *Aniversario – Luna de Miel* para el {{date}}."
+    },
+    {
+      "id": "temazcalli",
+      "name": "TEMAZCALLI",
+      "category": "espiritu",
+      "modality": [
+        "grupal",
+        "indiv"
+      ],
+      "intensity": "total",
+      "element": "fuego",
+      "duration": "3 hrs",
+      "wa": "Hola Roni 🔥 Quisiera reservar el *Temazcalli* para el {{date}}."
+    },
+    {
+      "id": "yoga",
+      "name": "Clases de Yoga 60'",
+      "category": "mente",
+      "modality": [
+        "grupal",
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "aire",
+      "duration": "60 min",
+      "wa": "Hola Roni 🌬️ Quisiera reservar *Clases de Yoga* para el {{date}}."
+    },
+    {
+      "id": "soundhealing",
+      "name": "SOUNDHEALING 60'",
+      "category": "mente",
+      "modality": [
+        "grupal",
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "eter",
+      "duration": "60 min",
+      "wa": "Hola Roni ✨ Me gustaría reservar la sesión de *Soundhealing* del {{date}}."
+    },
+    {
+      "id": "breathwork",
+      "name": "BREATHWORK ICE BATH",
+      "category": "cuerpo",
+      "modality": [
+        "grupal",
+        "indiv"
+      ],
+      "intensity": "total",
+      "element": "agua",
+      "duration": "2 hrs",
+      "wa": "Hola Roni 💧 Quisiera participar en *Breathwork Ice Bath* el {{date}}."
+    },
+    {
+      "id": "vuelo-rebozo",
+      "name": "El Vuelo del Rebozo",
+      "category": "espiritu",
+      "modality": [
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "aire",
+      "duration": "60 min",
+      "wa": "Hola Roni 🌬️ Me gustaría vivir *El Vuelo del Rebozo* el {{date}}."
+    },
+    {
+      "id": "alinearte-tribu",
+      "name": "Alinearte en Tribu (Círculo de Rebozo)",
+      "category": "espiritu",
+      "modality": [
+        "grupal"
+      ],
+      "intensity": "medio",
+      "element": "tierra",
+      "duration": "2 hrs",
+      "wa": "Hola Roni 🌿 Quisiera asistir a *Alinearte en Tribu – Círculo de Rebozo* del {{date}}."
+    },
+    {
+      "id": "danza-acuatica",
+      "name": "Danza Acuática con Mandalas 90'",
+      "category": "espiritu",
+      "modality": [
+        "grupal",
+        "indiv"
+      ],
+      "intensity": "total",
+      "element": "agua",
+      "duration": "90 min",
+      "wa": "Hola Roni 🌊 Me encantaría reservar la *Danza Acuática con Mandalas* para el {{date}}."
+    },
+    {
+      "id": "renacer-laguna",
+      "name": "Renacer en la Laguna",
+      "category": "espiritu",
+      "modality": [
+        "indiv",
+        "pareja"
+      ],
+      "intensity": "total",
+      "element": "agua",
+      "duration": "2 hrs",
+      "wa": "Hola Roni 🌊 Quisiera vivir *Renacer en la Laguna* el {{date}}."
+    },
+    {
+      "id": "meditacion-amanecer",
+      "name": "Meditación al Amanecer con Paddle / Kayak",
+      "category": "mente",
+      "modality": [
+        "grupal",
+        "indiv"
+      ],
+      "intensity": "suave",
+      "element": "agua",
+      "duration": "90 min",
+      "wa": "Hola Roni 🌅 Quisiera reservar la *Meditación al Amanecer con Paddle/Kayak* para el {{date}}."
+    }
+  ]
+}

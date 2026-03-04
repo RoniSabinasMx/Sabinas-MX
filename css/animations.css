@@ -1,0 +1,41 @@
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    transition-delay: 0.1s;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.roni-image-wrapper.is-visible img {
+    transform: scale(1);
+}
+
+/* Float Animation */
+.float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Glassmorphism */
+.glass {
+    background: var(--clr-surface);
+    backdrop-filter: var(--blur-surface);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}

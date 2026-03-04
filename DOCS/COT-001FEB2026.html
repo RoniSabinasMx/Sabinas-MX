@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización NOVENO #001-2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-title: #333333; /* Gris Oscuro (Titulos, Negrita) */
+            --color-body: #666666;  /* Gris Medio (Cuerpo, Regular) */
+            --color-accent: #AEC6CF; /* Azul Pastel (Acento, Líneas, Total) */
+            --font-stack: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Fondo gris muy claro externo para resaltar el documento blanco */
+            font-family: var(--font-stack);
+            color: var(--color-body);
+            line-height: 1.6;
+        }
+
+        /* Contenedor principal que simula una hoja con márgenes amplios */
+        .document-container {
+            max-width: 800px; /* Ancho estándar de documento */
+            margin: 60px auto; /* Centrado y con espacio vertical */
+            background-color: #ffffff;
+            padding: 60px 80px; /* Márgenes internos amplios para la "elegancia minimalista" */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra muy sutil para dar profundidad */
+        }
+
+        /* Tipografía y Colores Generales */
+        h1, h2, h3, h4 {
+            color: var(--color-title);
+            font-weight: 700;
+            margin-top: 0;
+        }
+
+        h1 { letter-spacing: 1px; margin-bottom: 5px; }
+        .subtitle { font-size: 0.9em; margin-bottom: 40px; }
+
+        /* Secciones */
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--color-accent); /* Uso del color de acento en línea divisoria */
+            padding-bottom: 30px;
+        }
+
+        .header-meta { text-align: right; font-size: 0.9em; }
+        .header-meta strong { color: var(--color-title); }
+
+        .client-section, .summary-section {
+            margin-bottom: 40px;
+        }
+
+        /* Estilos de Tabla de Precios */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+
+        .pricing-table th {
+            text-align: left;
+            padding: 15px 10px;
+            color: var(--color-title);
+            border-bottom: 2px solid var(--color-accent); /* Acento en cabecera de tabla */
+            font-size: 0.95em;
+        }
+
+        .pricing-table td {
+            padding: 25px 10px;
+            vertical-align: top;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        /* Columna de precio alineada a la derecha y más prominente */
+        .price-column {
+            text-align: right;
+            font-weight: 700;
+            color: var(--color-title);
+            font-size: 1.1em;
+            white-space: nowrap;
+        }
+
+        /* Estilos para listas dentro de la descripción */
+        .description-content ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+        .description-content li { margin-bottom: 8px; }
+        .description-subtitle {
+            font-weight: 700;
+            color: var(--color-title);
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        /* Términos y Totales */
+        .terms-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .conditions-block {
+            flex: 2;
+            min-width: 300px;
+            margin-right: 40px;
+        }
+
+        .conditions-block ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .conditions-block li { margin-bottom: 10px; }
+
+        /* Bloque de Totales con acento */
+        .totals-block {
+            flex: 1;
+            min-width: 250px;
+            text-align: right;
+        }
+
+        .subtotal-line { margin-bottom: 10px; font-size: 0.9em; }
+
+        /* Resaltado del Total Final usando el Azul Pastel */
+        .final-total-box {
+            background-color: var(--color-accent); /* Fondo de acento */
+            color: #ffffff; /* Texto blanco para contraste sobre el azul pastel */
+            /* Opcional: si el blanco no contrasta bien, usar color título:
+               color: var(--color-title); */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        
+        /* Ajuste para que el texto oscuro se lea bien sobre el azul pastel */
+        .final-total-box h3, .final-total-box div {
+             color: #333333; /* Usando el gris oscuro para mejor contraste sobre el pastel */
+        }
+
+        .final-total-box h3 { margin: 0 0 5px 0; font-size: 0.9em; text-transform: uppercase; }
+        .total-amount { font-size: 1.8em; font-weight: 700; }
+
+        /* Pie de página */
+        .footer-section {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid #eeeeee;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-item { margin-right: 20px; margin-bottom: 10px; display: flex; align-items: center; }
+        .footer-icon { margin-right: 8px; font-size: 1.2em; }
+
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+            .document-container { margin: 20px; padding: 30px 20px; }
+            .header-section { flex-direction: column; }
+            .header-meta { text-align: left; margin-top: 20px; }
+            .terms-container { flex-direction: column; }
+            .conditions-block { margin-right: 0; margin-bottom: 30px; }
+            .totals-block { width: 100%; text-align: left; }
+            .final-total-box { text-align: center; }
+            .price-column { text-align: left; margin-top: 10px; }
+            /* En móviles, tabla se rompe para ser legible */
+            .pricing-table thead { display: none; }
+            .pricing-table td { display: block; padding: 10px 0; }
+            .pricing-table td:first-child { font-weight: 700; color: var(--color-title); margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document-container">
+        <header class="header-section">
+            <div class="brand-info">
+                <h1>NOVENO</h1>
+                <div class="subtitle">Colaboración Freelance | Desarrollo Web & Estrategia Digital</div>
+            </div>
+            <div class="header-meta">
+                <div><strong>FECHA:</strong> 07 de Febrero, 2026</div>
+                <div><strong>COTIZACIÓN #:</strong> 001-2026</div>
+                <div><strong>VALIDEZ:</strong> 15 días</div>
+            </div>
+        </header>
+
+        <section class="client-section">
+            <h3>PREPARADO PARA:</h3>
+            <div>Roni Sabinas</div>
+            <div>Sabinas</div>
+        </section>
+
+        <section class="summary-section">
+            <h3>RESUMEN DEL PROYECTO</h3>
+            <p>Desarrollo de Landing Page optimizada para conversión, con arquitectura preparada para escalabilidad hacia E-commerce y sistema de reservas.</p>
+        </section>
+
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">CONCEPTO</th>
+                    <th style="width: 55%;">DESCRIPCIÓN DETALLADA</th>
+                    <th style="width: 20%; text-align: right;">INVERSIÓN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Landing Page Premium</td>
+                    <td class="description-content">
+                        <span class="description-subtitle">Diseño y Maquetación:</span>
+                        <ul>
+                            <li>Diseño UI/UX Minimalista y Elegante (Acabados en tonos grises/pastel).</li>
+                            <li>Estructura "One Page" de alto impacto con redirecciones a categorias y secciones.</li>
+                            <li>Adaptabilidad total a móviles (Responsive Design).</li>
+                        </ul>
+
+                        <span class="description-subtitle">Funcionalidades Avanzadas:</span>
+                        <ul>
+                            <li>Preparación E-commerce: Configuración de base de datos y estructura lista para activar tienda online futura.</li>
+                            <li>Preparación para Motor de Reservas: Configuración de Integración técnica y visual de sistema de agendamiento/booking.</li>
+                            <li>Formulario de contacto y botones de llamada a la acción (CTA).</li>
+                        </ul>
+                    </td>
+                    <td class="price-column">$6,000.00 MXN</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="terms-container">
+            <section class="conditions-block">
+                <h3>CONDICIONES COMERCIALES</h3>
+                <ul>
+                    <li><strong>Forma de Pago:</strong> 50% de anticipo para iniciar, 50% contra entrega final.</li>
+                    <li><strong>Tiempo de Entrega:</strong> 15 dias a partir de la recepción del material.</li>
+                    <li><strong>Facturación:</strong> Los precios mostrados son netos.</li>
+                </ul>
+            </section>
+
+            <section class="totals-block">
+                <div class="subtotal-line">
+                    SUBTOTAL: $6,000.00 MXN
+                </div>
+                <div class="subtotal-line">
+                    IVA (16%): $960.00 MXN
+                </div>
+                
+                <div class="final-total-box">
+                    <h3>Total con Factura</h3>
+                    <div class="total-amount">$6,960.00 MXN</div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer-section">
+            <div class="footer-item">
+                <span class="footer-icon">📧</span> gd@guglielmodonati.com
+            </div>
+            <div class="footer-item">
+                <span class="footer-icon">📱</span> WhatsApp: +52 998 907 1303
+            </div>
+            <div class="footer-item">
+                <span class="footer-icon">📍</span> Quintana Roo, México
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
