@@ -1,7 +1,7 @@
 /* ─── OVERLAYS: Modal / Spotlight / Oracle / Calendar ─── */
 
 /* Shared overlay base */
-#global-modal,
+.sabinas-modal-overlay,
 #spotlight-overlay,
 #oracle-overlay,
 #calendar-overlay {
@@ -16,7 +16,7 @@
     transition: opacity 0.4s ease;
 }
 
-#global-modal.active,
+.sabinas-modal-overlay.active,
 #spotlight-overlay.active,
 #oracle-overlay.active,
 #calendar-overlay.active {
@@ -25,12 +25,19 @@
 }
 
 /* ─── MODAL ─── */
-#global-modal {
+.sabinas-modal-overlay {
     background: rgba(42, 39, 36, 0.5);
     backdrop-filter: blur(10px);
 }
 
-.modal-content {
+#service-modal {
+    background: transparent;
+    backdrop-filter: none;
+    z-index: 2005;
+    /* higher than element-modal */
+}
+
+.sabinas-modal {
     background: var(--clr-bg);
     width: 92%;
     max-width: 1000px;
@@ -38,15 +45,28 @@
     max-height: 800px;
     border-radius: 2rem;
     overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
-    transform: scale(0.92) translateY(24px);
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Antigravity initial state */
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.6s var(--antigravity-ease, cubic-bezier(0.175, 0.885, 0.32, 1.02)), opacity 0.4s ease, filter 0.6s var(--antigravity-ease, ease);
     box-shadow: 0 60px 120px rgba(0, 0, 0, 0.25);
 }
 
-#global-modal.active .modal-content {
-    transform: scale(1) translateY(0);
+.sabinas-modal-overlay.active .sabinas-modal.is-active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Antigravity pushed back state */
+.sabinas-modal-overlay.active .sabinas-modal.is-pushed-back {
+    transform: scale(0.92) translateY(-4%);
+    filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .modal-bar {
@@ -79,6 +99,20 @@
 
 .modal-close:hover {
     background: rgba(0, 0, 0, 0.09);
+}
+
+.modal-back {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--clr-text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-back:hover {
+    color: var(--clr-text);
 }
 
 #modal-iframe {
@@ -179,6 +213,77 @@
     color: var(--clr-sand);
     text-transform: uppercase;
     margin-bottom: 2rem;
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Scroll Lock */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Mobile full-screen adjustments for modals and Oracle */
+@media (max-width: 768px) {
+    .sabinas-modal-overlay {
+        align-items: flex-end;
+        /* Bottom anchored */
+    }
+
+    .sabinas-modal {
+        width: 100vw;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0;
+        transform: translateY(100%);
+    }
+
+    .sabinas-modal-overlay.active .sabinas-modal.is-active {
+        transform: translateY(0);
+    }
+
+    .modal-bar {
+        padding: 1rem 1.25rem;
+    }
+
+    .spot-close,
+    .modal-close-mobile {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 50;
+    }
+
+    .q-card {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        padding: 3rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .q-title {
+        font-size: 2rem;
+    }
 }
 
 .q-title {
@@ -312,6 +417,86 @@
 .spot-close:hover {
     background: rgba(42, 39, 36, 0.15);
     transform: rotate(90deg);
+}
+
+/* ─── WA BOTTOM SHEET ─── */
+#wa-bottom-sheet {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    align-items: flex-end;
+    z-index: 2100;
+}
+
+.bottom-sheet {
+    width: 100%;
+    max-width: 600px;
+    background: var(--clr-bg);
+    border-radius: 2rem 2rem 0 0;
+    padding: 2.5rem 2rem 3rem 2rem;
+    transform: translateY(100%);
+    transition: transform 0.5s var(--antigravity-ease);
+    position: relative;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
+}
+
+#wa-bottom-sheet.active .bottom-sheet {
+    transform: translateY(0);
+}
+
+.sheet-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--clr-text-muted);
+}
+
+.sheet-content {
+    text-align: center;
+}
+
+.sheet-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.sheet-content p {
+    color: var(--clr-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+#wa-name-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    outline: none;
+    font-family: var(--font-body);
+    transition: border-color 0.3s;
+}
+
+#wa-name-input:focus {
+    border-color: var(--clr-sage);
+}
+
+#wa-continue-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 /* ─── CALENDAR OVERLAY ─── */
@@ -466,4 +651,46 @@
 .mini-cal-wrapper .cal-day.today {
     background: rgba(212, 163, 115, 0.25);
     color: var(--clr-sand);
+}
+
+/* ─── CALENDAR EVENT DOTS ─── */
+.cal-day {
+    position: relative;
+    flex-direction: column;
+}
+
+.event-dots-front {
+    display: flex;
+    gap: 2px;
+    margin-top: 1px;
+}
+
+.event-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+}
+
+.dot-agua {
+    background: #3B82F6;
+}
+
+.dot-fuego {
+    background: #EF4444;
+}
+
+.dot-tierra {
+    background: #92400E;
+}
+
+.dot-aire {
+    background: #6EE7B7;
+}
+
+.dot-eter {
+    background: #A78BFA;
+}
+
+.dot-default {
+    background: var(--clr-sand);
 }

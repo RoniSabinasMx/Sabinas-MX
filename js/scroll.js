@@ -1,20 +1,22 @@
 export function initScrollEffects() {
-    const header = document.getElementById('site-header');
-    let lastScroll = 0;
+    const headerPill = document.querySelector('.header-pill');
 
-    // Header show/hide
-    window.addEventListener('scroll', () => {
+    // Floating Pill Header reveal logic
+    const checkHeaderReveal = () => {
+        if (!headerPill) return;
         const currentScroll = window.pageYOffset;
+        const revealThreshold = 100; // Revela tras bajar 100px desde arriba
 
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            header.classList.remove('header-active');
-            header.classList.add('header-hidden');
+        if (currentScroll > revealThreshold) {
+            headerPill.classList.add('is-scrolled');
         } else {
-            header.classList.add('header-active');
-            header.classList.remove('header-hidden');
+            headerPill.classList.remove('is-scrolled');
         }
-        lastScroll = currentScroll;
-    });
+    };
+
+    window.addEventListener('scroll', checkHeaderReveal);
+    // Verificar en Load para inicializaciones a medio scroll
+    checkHeaderReveal();
 
     // Reveal animations
     const observerOptions = {

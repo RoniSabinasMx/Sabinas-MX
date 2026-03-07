@@ -16,3 +16,9 @@ desktop.ini
 
 # Node (if added later)
 node_modules/
+admin/node_modules/
+admin/dist/
+admin/.env
+
+# 📋 Internal docs — not for the repo
+DOCS/resumen_proyecto.md

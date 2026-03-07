@@ -67,3 +67,38 @@ export async function fetchSetting(key) {
     if (error) return null;
     return data?.value ?? null;
 }
+
+/** Fetch events for a given year/month (1-indexed month) */
+export async function fetchEvents(year, month) {
+    const from = `${year}-${String(month).padStart(2, '0')}-01`;
+    const to = `${year}-${String(month).padStart(2, '0')}-${new Date(year, month, 0).getDate()}`;
+    const { data } = await db
+        .from('events')
+        .select('id,title_es,title_en,description_es,description_en,date,time,element,image_url,capacity_total,capacity_booked')
+        .gte('date', from)
+        .lte('date', to)
+        .order('date');
+    return data || [];
+}
+
+/** Fetch services for a specific element */
+export async function fetchServicesByElement(element) {
+    const { data } = await db
+        .from('services')
+        .select('*')
+        .eq('element', element)
+        .order('sort_order');
+    return data || [];
+}
+
+/** Fetch a single service by ID */
+export async function fetchServiceById(id) {
+    const { data, error } = await db
+        .from('services')
+        .select('*')
+        .eq('id', id)
+        .single();
+    if (error) return null;
+    return data;
+}
+

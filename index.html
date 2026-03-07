@@ -11,42 +11,87 @@
     <meta property="og:description" content="Un rezo a las aguas, la memoria y la tierra.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=11">
     <link rel="stylesheet" href="css/components.css">
 </head>
 
 <body>
 
-    <!-- ═══ HEADER ═══ -->
-    <header id="site-header" class="header-active">
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="SABINAS">
-            <span class="logo-fallback">SABINAS</span>
+    <!-- ═══ HEADER (Desktop & Mobile Top) ═══ -->
+    <header id="main-header" class="sabinas-header">
+        <div class="header-pill">
+            <div class="header-logo">
+                <img src="assets/images/logo.svg" alt="SABINAS">
+            </div>
+
+            <nav class="header-nav-elements">
+                <button class="btn-elemento magnetic" data-element="agua" aria-label="Elemento Agua">
+                    <img src="./assets/icons/agua.png" alt="Icono Agua" class="icono-png">
+                </button>
+                <button class="btn-elemento magnetic" data-element="aire" aria-label="Elemento Aire">
+                    <img src="./assets/icons/aire.png" alt="Icono Aire" class="icono-png">
+                </button>
+                <button class="btn-elemento magnetic" data-element="fuego" aria-label="Elemento Fuego">
+                    <img src="./assets/icons/fuego.png" alt="Icono Fuego" class="icono-png">
+                </button>
+                <button class="btn-elemento magnetic" data-element="tierra" aria-label="Elemento Tierra">
+                    <img src="./assets/icons/tierra.png" alt="Icono Tierra" class="icono-png">
+                </button>
+                <button class="btn-elemento magnetic" data-element="eter" aria-label="Elemento Éter">
+                    <img src="./assets/icons/eter.png" alt="Icono Éter" class="icono-png">
+                </button>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-btn" id="lang-toggle" aria-label="Cambiar idioma">ESP | ENG</button>
+                <button class="hamburger-btn" id="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-        <nav class="nav-links" aria-label="Elementos">
-            <button class="nav-btn magnetic" data-element="agua" data-i18n="nav.agua">Agua</button>
-            <button class="nav-btn magnetic" data-element="aire" data-i18n="nav.aire">Aire</button>
-            <button class="nav-btn magnetic" data-element="fuego" data-i18n="nav.fuego">Fuego</button>
-            <button class="nav-btn magnetic" data-element="tierra" data-i18n="nav.tierra">Tierra</button>
-            <button class="nav-btn magnetic" data-element="eter" data-i18n="nav.eter">Éter</button>
+
+        <!-- Dropdown Móvil (Glassmorphism) -->
+        <nav id="mobile-dropdown" class="mobile-dropdown" aria-label="Menú Móvil">
+            <button class="btn-elemento magnetic" data-element="agua" aria-label="Elemento Agua">
+                <img src="./assets/icons/agua.png" alt="Icono Agua" class="icono-png">
+            </button>
+            <button class="btn-elemento magnetic" data-element="aire" aria-label="Elemento Aire">
+                <img src="./assets/icons/aire.png" alt="Icono Aire" class="icono-png">
+            </button>
+            <button class="btn-elemento magnetic" data-element="fuego" aria-label="Elemento Fuego">
+                <img src="./assets/icons/fuego.png" alt="Icono Fuego" class="icono-png">
+            </button>
+            <button class="btn-elemento magnetic" data-element="tierra" aria-label="Elemento Tierra">
+                <img src="./assets/icons/tierra.png" alt="Icono Tierra" class="icono-png">
+            </button>
+            <button class="btn-elemento magnetic" data-element="eter" aria-label="Elemento Éter">
+                <img src="./assets/icons/eter.png" alt="Icono Éter" class="icono-png">
+            </button>
         </nav>
-        <button class="lang-btn" id="lang-toggle" aria-label="Cambiar idioma">ESP | ENG</button>
     </header>
 
-    <!-- ═══ SECTION 1: HERO ═══ -->
-    <section id="hero" aria-label="Hero">
-        <img src="assets/images/hero.png" class="hero-media" alt="Laguna Bacalar" onerror="this.style.display='none'">
+    <!-- ═══ SECTION 1: HERO (Cinematic Video) ═══ -->
+    <section id="hero-section" class="hero-section" aria-label="Hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="./assets/tu-video-bacalar.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
         <div class="hero-overlay"></div>
-        <div class="hero-text">
-            <h1 class="hero-wordmark">SABINAS</h1>
-            <p class="hero-sub">Bienestar · Medicina Tradicional · Bacalar</p>
+
+        <div id="hero-logo-container" class="hero-logo-container">
+            <img src="./assets/logo-arbol.png" alt="Sabinas Logo" class="hero-logo">
         </div>
-        <div class="scroll-indicator" aria-hidden="true">
+
+        <!-- Flecha o scroll indicator opcional (lo mantendremos oculto bajo el overlay si no lo piden, pero lo estilizaremos al fondo) -->
+        <div class="scroll-indicator" aria-hidden="true" style="z-index: 3;">
             <span data-i18n="hero.scroll_invite">Desliza para conectar</span>
             <div class="scroll-track">
                 <div class="scroll-dot"></div>
@@ -158,16 +203,41 @@
 
     <!-- ═══ OVERLAYS ═══ -->
 
-    <!-- Global Modal / Iframe -->
-    <div id="global-modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
+    <!-- Element Grid Modal -->
+    <div id="element-modal" class="sabinas-modal-overlay" role="dialog" aria-modal="true">
+        <div class="sabinas-modal">
             <div class="modal-bar">
-                <span id="modal-title" class="modal-title-text"></span>
+                <span id="element-modal-title" class="modal-title-text"></span>
                 <button class="modal-close" aria-label="Cerrar">✕</button>
             </div>
-            <iframe id="modal-iframe" src="about:blank" title="Servicio"></iframe>
+            <div id="element-modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Single Service Modal -->
+    <div id="service-modal" class="sabinas-modal-overlay" role="dialog" aria-modal="true">
+        <div class="sabinas-modal">
+            <div class="modal-bar">
+                <button class="modal-back" aria-label="Volver">← Volver</button>
+                <button class="modal-close" aria-label="Cerrar">✕</button>
+            </div>
+            <div id="service-modal-content"></div>
             <div class="modal-footer">
-                <a id="modal-wa-btn" href="#" target="_blank" rel="noopener" class="wa-btn">Reservar por WhatsApp ↗</a>
+                <button id="service-wa-btn" class="wa-btn">Reservar por WhatsApp ↗</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Bottom Sheet -->
+    <div id="wa-bottom-sheet" class="sabinas-modal-overlay" role="dialog" aria-modal="true"
+        aria-label="Reserva por WhatsApp">
+        <div class="bottom-sheet">
+            <button class="sheet-close" aria-label="Cerrar">✕</button>
+            <div class="sheet-content">
+                <h3>¿Cómo te llamas?</h3>
+                <p>Para personalizar tu experiencia 🌿</p>
+                <input type="text" id="wa-name-input" placeholder="Tu nombre..." autocomplete="off">
+                <button id="wa-continue-btn" class="wa-btn" disabled>Ir a WhatsApp ↗</button>
             </div>
         </div>
     </div>
@@ -198,7 +268,8 @@
 
     <!-- Config must load BEFORE ES modules so Supabase client has credentials -->
     <script src="config/config.js"></script>
-    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/app.js?v=11"></script>
+    <script type="module" src="js/magnetic.js?v=11"></script>
 </body>
 
 </html>
