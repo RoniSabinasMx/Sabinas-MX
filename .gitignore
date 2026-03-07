@@ -2,23 +2,55 @@
 # SABINAS SPA — .gitignore
 # ============================================================
 
-# 🔐 NEVER commit real config (contains API keys)
+# 🔐 API Keys y Entornos Locales
 config/config.js
+.env
+.env.local
+.env.*.local
+*.pem
 
-# OS
+# 🖥️ Archivos de Sistema Operativo
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 Thumbs.db
-desktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
 
-# Editor
-.vscode/settings.json
+# 🛠️ Editores y Entornos de Desarrollo
+.vscode/
 .idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Node (if added later)
+# 📦 Dependencias Node & Build
 node_modules/
 admin/node_modules/
 admin/dist/
 admin/.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# 📋 Internal docs — not for the repo
-DOCS/resumen_proyecto.md
+# 📋 Documentación interna, backups y basura (No requeridos para Frontend)
+DOCS/
+*.log
+*.zip
+*.tar
+*.gz
