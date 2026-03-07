@@ -6,7 +6,7 @@ import { I18nManager } from './i18n.js?v=8';
 import { initScrollEffects } from './scroll.js?v=9';
 import { initMagneticButtons } from './magnetic.js?v=9';
 import { initOracle } from './oracle.js?v=9';
-import { initCalendar } from './calendar.js?v=11';
+import { initCalendar } from './calendar.js?v=12';
 import { initNav } from './nav.js?v=11';
 import { initHeroCinematic } from './hero.js?v=11';
 import {

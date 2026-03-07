@@ -5,9 +5,23 @@ export function initCalendar() {
 
   if (!trigger || !overlay) return;
 
-  trigger.addEventListener('click', () => overlay.classList.add('active'));
-  closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
-  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('active'); });
+  trigger.addEventListener('click', () => {
+    // Redraw every time we open to ensure it never gets stuck in a form
+    renderCalendar();
+    overlay.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    setTimeout(renderCalendar, 300); // Reset in background
+  });
+
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) {
+      overlay.classList.remove('active');
+      setTimeout(renderCalendar, 300); // Reset in background
+    }
+  });
 
   renderCalendar();
 }
@@ -100,12 +114,12 @@ function showDateFlow(date, pretty, waNum) {
     <a href="https://wa.me/${waNum}" id="date-wa-btn" target="_blank" rel="noopener" class="wa-btn" style="display:block; text-align:center; margin-top:1.5rem">
         Reservar por WhatsApp ↗
     </a>
-    <button class="q-restart" onclick="document.getElementById('full-cal').innerHTML=''; window._rebuildCal && window._rebuildCal()">
+    <button class="q-restart" onclick="window._rebuildCal && window._rebuildCal()">
       ← Volver al calendario
     </button>
   `;
 
-  window._rebuildCal = () => { document.getElementById('calendar-overlay').classList.remove('active'); };
+  window._rebuildCal = () => { renderCalendar(); };
 
   const waBtn = full.querySelector('#date-wa-btn');
   function updateWA() {
@@ -202,7 +216,7 @@ function showEventFlow(event, waNum) {
     ${capacityHtml}
     ${btnHtml}
     
-    <button class="q-restart" style="margin-top: 1.5rem;" onclick="document.getElementById('full-cal').innerHTML=''; window._rebuildCal && window._rebuildCal()">
+    <button class="q-restart" style="margin-top: 1.5rem;" onclick="window._rebuildCal && window._rebuildCal()">
       ← ${lang === 'es' ? 'Volver al calendario' : 'Back to calendar'}
     </button>
   `;
