@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // ── 8. Nav element buttons → open modal ──
-    document.querySelectorAll('.nav-btn[data-element]').forEach(btn => {
+    document.querySelectorAll('.btn-elemento[data-element]').forEach(btn => {
         btn.addEventListener('click', () => {
             openElementModal(btn.dataset.element);
             window._toggleScrollLock(true);
