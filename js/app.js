@@ -41,8 +41,15 @@ function toServiceShape(row, lang) {
 function renderSponsors(sponsors) {
     const track = document.querySelector('.marquee-track');
     if (!track || !sponsors?.length) return;
+    const { supabaseUrl } = window.SABINAS_CONFIG || {};
     const items = sponsors
-        .map(s => `<a href="${s.url}" class="marquee-item">${s.name}</a>`)
+        .map(s => {
+            if (s.image_url && supabaseUrl) {
+                const imgUrl = `${supabaseUrl}/storage/v1/object/public/sponsor-logos/${s.image_url}`;
+                return `<a href="${s.url}" class="marquee-item marquee-item-img"><img src="${imgUrl}" alt="${s.name}" loading="lazy"/></a>`;
+            }
+            return `<a href="${s.url}" class="marquee-item">${s.name}</a>`;
+        })
         .join('');
     // Duplicate for seamless loop
     track.innerHTML = items + items;

@@ -729,3 +729,34 @@ body.no-scroll {
     color: #b91c1c;
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
+
+/* ─── SPONSORS LOGOS (MARQUEE) ─── */
+.marquee-item-img {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Ajustarse a la altura de la pista o flexbox */
+}
+
+.marquee-item-img img {
+    height: 40px;
+    /* Tamaño por defecto del logo */
+    width: auto;
+    object-fit: contain;
+    filter: invert(1) brightness(200%);
+    /* Por defecto el fondo del footer es oscuro, el logo suele ser oscuro. Ajustar si hace falta */
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.marquee-item-img:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .marquee-item-img img {
+        height: 30px;
+    }
+}
