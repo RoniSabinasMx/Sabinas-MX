@@ -141,7 +141,7 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
-    max-width: 300px;
+    max-width: 500px;
     /* Tamaño máximo en escritorio */
     /* Curva de animación suave y elegante */
     transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1);
