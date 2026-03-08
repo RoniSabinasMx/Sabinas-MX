@@ -473,7 +473,8 @@ section {
 }
 
 .footer-links a,
-.footer-el-link {
+.footer-el-link,
+.footer-meta-link {
     color: rgba(246, 244, 240, 0.6);
     font-size: 0.95rem;
     transition: color 0.3s ease;
@@ -483,7 +484,8 @@ section {
 }
 
 .footer-links a:hover,
-.footer-el-link:hover {
+.footer-el-link:hover,
+.footer-meta-link:hover {
     color: var(--clr-sand);
 }
 
