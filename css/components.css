@@ -730,6 +730,27 @@ body.no-scroll {
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
+/* ─── OVERRIDE: COLAB MODAL AL CENTRO ─── */
+#colab-bottom-sheet {
+    align-items: center !important;
+    /* Forza el centrado horizontal y vertical incluso en móviles */
+}
+
+#colab-bottom-sheet .bottom-sheet {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 2rem;
+    transform: scale(0.95) translateY(0) !important;
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    padding-bottom: 2.5rem;
+}
+
+#colab-bottom-sheet.active .bottom-sheet {
+    transform: scale(1) translateY(0) !important;
+    opacity: 1;
+}
+
 /* ─── SPONSORS LOGOS (MARQUEE) ─── */
 .marquee-item-img {
     display: inline-flex;
