@@ -24,9 +24,10 @@ Sitio web de **Sabinas**, espacio holístico de bienestar y medicina tradicional
 
 ## Funcionalidades del sitio público
 
-- **Header "Floating Pill" Ultra-lujo**: Cabecera centralizada con diseño *dark glassmorphism* interactivo, dotado de animación *scroll-reveal* post-Hero.
-- **Interfaz 100% Responsiva (Mobile-First)**: Incluye un **Bottom Navigation Dock** inteligente que ancla de forma fija los íconos de elementos interactivos (PNG) en la parte inferior en celulares.
-- Menú interactivo de Elementos (Agua, Aire, Fuego, Tierra, Éter) animados con físicas de **"Spatial Push"** (Antigravity).
+- **Header "Floating Pill" Ultra-lujo**: Cabecera centralizada con diseño *light glassmorphism* estático y moderno.
+- **Hero Cinematográfico**: Sección principal con video de fondo nativo fullscreen (`autoplay, muted, loop`) y animación temporizada en JS puro que traslada y minimiza el logotipo principal con curvas Bézier premium.
+- **Interfaz 100% Responsiva (Mobile-First)**: Rediseño total en pantallas menores a 768px integrando un **Menú Hamburguesa Desplegable** de panel transparente vertical para contener la iconografía.
+- Menú interactivo de Elementos (Agua, Aire, Fuego, Tierra, Éter) en formato de **íconos PNG** animados con físicas de **"Spatial Push"** (Antigravity).
 - Spotlight search nativo sobre los 33 servicios disponibles con modales Fullscreen (`100vh`).
 - Cuestionario / Oráculo de 5 pasos con recomendación personalizada por elemento.
 - Reserva directa por WhatsApp pasando por un micro-formulario **"Bottom Sheet"** responsivo para capturar el nombre del huésped.
@@ -197,4 +198,4 @@ Todo el contenido se gestiona desde el **Panel de Administración** (`/admin`). 
 ## Contacto
 
 Bacalar, Quintana Roo, México  
-+52 984 180 2741 · hola@sabinas.mx
++52 984 180 2741 · contacto@sabinas.mx
