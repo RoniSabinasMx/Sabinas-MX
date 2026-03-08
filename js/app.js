@@ -44,8 +44,11 @@ function renderSponsors(sponsors) {
     const { supabaseUrl } = window.SABINAS_CONFIG || {};
     const items = sponsors
         .map(s => {
-            if (s.image_url && supabaseUrl) {
-                const imgUrl = `${supabaseUrl}/storage/v1/object/public/sponsor-logos/${s.image_url}`;
+            const imgSource = s.logo_url || s.image_url;
+            if (imgSource && supabaseUrl) {
+                const imgUrl = imgSource.startsWith('http')
+                    ? imgSource
+                    : `${supabaseUrl}/storage/v1/object/public/sponsor-logos/${imgSource}`;
                 return `<a href="${s.url}" class="marquee-item marquee-item-img"><img src="${imgUrl}" alt="${s.name}" loading="lazy"/></a>`;
             }
             return `<a href="${s.url}" class="marquee-item">${s.name}</a>`;
