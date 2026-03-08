@@ -17,8 +17,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/main.css?v=14">
-    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css?v=15">
+    <link rel="stylesheet" href="css/components.css?v=12">
 </head>
 
 <body>
@@ -171,8 +171,7 @@
                 <div class="footer-sub-links">
                     <a href="mailto:contacto@sabinas.mx" class="footer-meta-link"
                         data-i18n="footer.experience_link">Conserva tu experiencia</a>
-                    <a href="mailto:contacto@sabinas.mx" class="footer-meta-link" data-i18n="footer.colab_link">Colabora
-                        con
+                    <a href="#" id="open-colab-btn" class="footer-meta-link" data-i18n="footer.colab_link">Colabora con
                         nosotros</a>
                 </div>
             </div>
@@ -247,6 +246,42 @@
         </div>
     </div>
 
+    <!-- Colabora Bottom Sheet -->
+    <div id="colab-bottom-sheet" class="sabinas-modal-overlay" role="dialog" aria-modal="true"
+        aria-label="Formulario de Colaboración">
+        <div class="bottom-sheet">
+            <button class="sheet-close" aria-label="Cerrar">✕</button>
+            <div class="sheet-content">
+                <h3 data-i18n="colab.title">Colabora con nosotros</h3>
+                <p data-i18n="colab.desc">Déjanos tu información y cuéntanos cómo te gustaría sumarte a la tribu
+                    Sabinas.</p>
+
+                <form id="colab-form" class="colab-form">
+                    <input type="text" id="colab-name" class="flow-input" data-i18n="colab.name_placeholder"
+                        placeholder="Tu nombre completo" autocomplete="name" required>
+                    <input type="email" id="colab-email" class="flow-input" data-i18n="colab.email_placeholder"
+                        placeholder="Tu correo electrónico" autocomplete="email" required>
+                    <input type="tel" id="colab-phone" class="flow-input" data-i18n="colab.phone_placeholder"
+                        placeholder="Tu teléfono (opcional)" autocomplete="tel">
+                    <textarea id="colab-msg" class="flow-input colab-textarea" data-i18n="colab.msg_placeholder"
+                        placeholder="Cuéntanos sobre tu proyecto o idea..." rows="3"></textarea>
+
+                    <button type="submit" id="colab-submit-btn" class="wa-btn"
+                        style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+                        <span data-i18n="colab.submit">Enviar solicitud</span>
+                    </button>
+                </form>
+
+                <div id="colab-success" class="colab-feedback success-msg" style="display: none;">
+                    <span data-i18n="colab.success">¡Gracias! Hemos recibido tu mensaje.</span>
+                </div>
+                <div id="colab-error" class="colab-feedback error-msg" style="display: none;">
+                    <span data-i18n="colab.error">Hubo un error al enviar tu propuesta. Inténtalo de nuevo.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Spotlight Search (Vía A) -->
     <div id="spotlight-overlay" role="dialog" aria-modal="true" aria-label="Buscador de servicios">
         <div class="spotlight-inner">
@@ -273,7 +308,7 @@
 
     <!-- Config must load BEFORE ES modules so Supabase client has credentials -->
     <script src="config/config.js"></script>
-    <script type="module" src="js/app.js?v=12"></script>
+    <script type="module" src="js/app.js?v=13"></script>
     <script type="module" src="js/magnetic.js?v=11"></script>
 </body>
 

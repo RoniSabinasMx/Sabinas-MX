@@ -258,6 +258,66 @@ document.addEventListener('DOMContentLoaded', async () => {
         closeGlobalModal();
     });
 
+    /* ─── COLABORA WITH US FORM ─── */
+    const openColabBtn = document.getElementById('open-colab-btn');
+    const colabBottomSheet = document.getElementById('colab-bottom-sheet');
+    const colabForm = document.getElementById('colab-form');
+    const colabSuccess = document.getElementById('colab-success');
+    const colabError = document.getElementById('colab-error');
+    const colabSubmitBtn = document.getElementById('colab-submit-btn');
+
+    if (openColabBtn && colabBottomSheet) {
+        openColabBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            colabBottomSheet.classList.add('active');
+            // reset form if previously filled
+            colabForm.reset();
+            colabForm.style.display = 'flex';
+            colabSuccess.style.display = 'none';
+            colabError.style.display = 'none';
+        });
+
+        // Close Colab Sheet via button or background click
+        colabBottomSheet.querySelector('.sheet-close').addEventListener('click', () => {
+            colabBottomSheet.classList.remove('active');
+        });
+        colabBottomSheet.addEventListener('click', (e) => {
+            if (e.target === colabBottomSheet) colabBottomSheet.classList.remove('active');
+        });
+    }
+
+    if (colabForm) {
+        colabForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const originalBtnText = colabSubmitBtn.innerHTML;
+            colabSubmitBtn.disabled = true;
+            colabSubmitBtn.innerHTML = 'Enviando...';
+            colabError.style.display = 'none';
+
+            const payload = {
+                nombre: document.getElementById('colab-name').value.trim(),
+                email: document.getElementById('colab-email').value.trim(),
+                telefono: document.getElementById('colab-phone').value.trim(),
+                mensaje: document.getElementById('colab-msg').value.trim(),
+                status: 'nuevo' // default CRM status
+            };
+
+            try {
+                await insertColaborador(payload);
+                // Success flow
+                colabForm.style.display = 'none';
+                colabSuccess.style.display = 'block';
+            } catch (err) {
+                console.error('[Colab Form] Error submitting:', err);
+                colabError.style.display = 'block';
+            } finally {
+                colabSubmitBtn.disabled = false;
+                colabSubmitBtn.innerHTML = originalBtnText;
+            }
+        });
+    }
+
     // ── 8. Nav element buttons → open modal ──
     document.querySelectorAll('.btn-elemento[data-element]').forEach(btn => {
         btn.addEventListener('click', () => {

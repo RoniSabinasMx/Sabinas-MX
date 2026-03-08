@@ -102,3 +102,12 @@ export async function fetchServiceById(id) {
     return data;
 }
 
+/** Inserción CRM: Formulario de colaboración */
+export async function insertColaborador(payload) {
+    const { data, error } = await db
+        .from('colaboradores_leads')
+        .insert([payload]);
+    if (error) throw error;
+    return data;
+}
+

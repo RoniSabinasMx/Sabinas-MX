@@ -694,3 +694,38 @@ body.no-scroll {
 .dot-default {
     background: var(--clr-sand);
 }
+
+/* ─── COLAB FORM ─── */
+.colab-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.colab-textarea {
+    resize: none;
+    min-height: 80px;
+    font-family: var(--font-body);
+}
+
+.colab-feedback {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.success-msg {
+    background: rgba(37, 211, 102, 0.1);
+    color: #1a9647;
+    border: 1px solid rgba(37, 211, 102, 0.2);
+}
+
+.error-msg {
+    background: rgba(239, 68, 68, 0.1);
+    color: #b91c1c;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}

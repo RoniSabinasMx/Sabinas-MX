@@ -73,6 +73,17 @@
         "experience_link": "Preserve your experience",
         "rights": "Sabinas · All rights reserved"
     },
+    "colab": {
+        "title": "Collaborate with us",
+        "desc": "Leave us your information and tell us how you would like to join the Sabinas tribe.",
+        "name_placeholder": "Your full name",
+        "email_placeholder": "Your email address",
+        "phone_placeholder": "Your phone number (optional)",
+        "msg_placeholder": "Tell us about your project or idea...",
+        "submit": "Send proposal",
+        "success": "Thank you! We have received your message.",
+        "error": "There was an error sending your proposal. Please try again."
+    },
     "whatsapp_number": "529841802741",
     "sponsors": [
         {

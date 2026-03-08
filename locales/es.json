@@ -73,6 +73,17 @@
     "experience_link": "Conserva tu experiencia",
     "rights": "Sabinas · Todos los derechos reservados"
   },
+  "colab": {
+    "title": "Colabora con nosotros",
+    "desc": "Déjanos tu información y cuéntanos cómo te gustaría sumarte a la tribu Sabinas.",
+    "name_placeholder": "Tu nombre completo",
+    "email_placeholder": "Tu correo electrónico",
+    "phone_placeholder": "Tu teléfono (opcional)",
+    "msg_placeholder": "Cuéntanos sobre tu proyecto o idea...",
+    "submit": "Enviar solicitud",
+    "success": "¡Gracias! Hemos recibido tu mensaje.",
+    "error": "Hubo un error al enviar tu propuesta. Inténtalo de nuevo."
+  },
   "whatsapp_number": "529841802741",
   "sponsors": [
     {
