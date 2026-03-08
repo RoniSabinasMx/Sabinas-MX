@@ -735,17 +735,14 @@ body.no-scroll {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    /* Ajustarse a la altura de la pista o flexbox */
+    /* Eliminamos el height: 100% que estaba colapsando el alto real */
 }
 
 .marquee-item-img img {
-    height: 40px;
-    /* Tamaño por defecto del logo */
+    height: 200px;
     width: auto;
     object-fit: contain;
     filter: invert(1) brightness(200%);
-    /* Por defecto el fondo del footer es oscuro, el logo suele ser oscuro. Ajustar si hace falta */
     opacity: 0.7;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -753,10 +750,11 @@ body.no-scroll {
 .marquee-item-img:hover img {
     opacity: 1;
     transform: scale(1.05);
+    /* Incrementado del hover normal */
 }
 
 @media (max-width: 768px) {
     .marquee-item-img img {
-        height: 30px;
+        height: 120px;
     }
 }
