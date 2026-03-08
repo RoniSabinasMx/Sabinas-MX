@@ -421,9 +421,13 @@ section {
 
 .marquee-track {
     display: flex;
-    gap: 5rem;
+    gap: 12rem;
+    /* Mucho más espacio entre logos gigantes */
     white-space: nowrap;
-    animation: marquee 28s linear infinite;
+    animation: marquee 40s linear infinite;
+    /* Movimiento más suave y distinguido */
+    width: max-content;
+    /* Asegurar que pueda expandirse infinitamente en el flex */
 }
 
 @keyframes marquee {

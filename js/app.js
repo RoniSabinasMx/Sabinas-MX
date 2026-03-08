@@ -54,8 +54,8 @@ function renderSponsors(sponsors) {
             return `<a href="${s.url}" class="marquee-item">${s.name}</a>`;
         })
         .join('');
-    // Duplicate for seamless loop
-    track.innerHTML = items + items;
+    // Multiple copies for a seamless infinite loop on ultra-wide screens
+    track.innerHTML = items + items + items + items;
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
