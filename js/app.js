@@ -198,9 +198,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         window._currentWaTemplate = waMsgTemplate;
 
         const { supabaseUrl } = window.SABINAS_CONFIG || {};
-        const imgHtml = data.image_url && supabaseUrl
+        // If image_url is already a full URL (starts with http), use it directly.
+        // Otherwise build the full Supabase storage URL to avoid double-prefixing.
+        const resolvedImgUrl = data.image_url
+            ? (data.image_url.startsWith('http')
+                ? data.image_url
+                : `${supabaseUrl}/storage/v1/object/public/service-images/${data.image_url}`)
+            : null;
+        const imgHtml = resolvedImgUrl
             ? `<div style="height: 240px; overflow: hidden; position: relative;">
-                 <img src="${supabaseUrl}/storage/v1/object/public/service-images/${data.image_url}" style="width: 100%; height: 100%; object-fit: cover;" alt="${name}" />
+                 <img src="${resolvedImgUrl}" style="width: 100%; height: 100%; object-fit: cover;" alt="${name}" />
                  <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--clr-bg), transparent 30%);"></div>
                </div>`
             : '';
