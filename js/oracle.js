@@ -27,18 +27,22 @@ export function initOracle() {
   // --- VIA A: Spotlight Search ---
   searchPath.addEventListener('click', () => {
     spotlight.classList.add('active');
-    setTimeout(() => searchInput.focus(), 300);
+    setTimeout(() => {
+      searchInput.focus();
+      // Populate the list immediately with all services sorted
+      searchInput.dispatchEvent(new Event('input'));
+    }, 300);
   });
 
   closeSpot.addEventListener('click', () => spotlight.classList.remove('active'));
 
   searchInput.addEventListener('input', () => {
     const q = searchInput.value.toLowerCase().trim();
-    const services = window._services || [];
+    const services = (window._services || []).slice().sort((a, b) => (a.sort_order || 0) - (b.sort_order || 0));
     const filtered = q === ''
-      ? services
-      : services.filter(s => s.name.toLowerCase().includes(q) || s.category.toLowerCase().includes(q));
-    renderSpotlightResults(filtered.slice(0, 8), resultsEl);
+      ? services                                                                         // all services, sorted
+      : services.filter(s => s.name.toLowerCase().includes(q) || (s.category || '').toLowerCase().includes(q));
+    renderSpotlightResults(q === '' ? filtered : filtered.slice(0, 20), resultsEl);
   });
 
   // --- VIA B: Questionnaire ---
