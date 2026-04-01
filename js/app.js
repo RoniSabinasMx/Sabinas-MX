@@ -12,6 +12,7 @@ import { initHeroCinematic } from './hero.js?v=11';
 import {
     fetchServices,
     fetchSponsors,
+    incrementSponsorClicks,
     fetchSetting,
     fetchEvents,
     fetchServiceById
@@ -45,17 +46,30 @@ function renderSponsors(sponsors) {
     const items = sponsors
         .map(s => {
             const imgSource = s.logo_url || s.image_url;
+            const sponsorId = s.id ? `data-sponsor-id="${s.id}"` : '';
             if (imgSource && supabaseUrl) {
                 const imgUrl = imgSource.startsWith('http')
                     ? imgSource
                     : `${supabaseUrl}/storage/v1/object/public/sponsor-logos/${imgSource}`;
-                return `<a href="${s.url}" class="marquee-item marquee-item-img"><img src="${imgUrl}" alt="${s.name}" loading="lazy"/></a>`;
+                return `<a href="${s.url}" class="marquee-item marquee-item-img" ${sponsorId} target="_blank" rel="noopener"><img src="${imgUrl}" alt="${s.name}" loading="lazy"/></a>`;
             }
-            return `<a href="${s.url}" class="marquee-item">${s.name}</a>`;
+            return `<a href="${s.url}" class="marquee-item" ${sponsorId} target="_blank" rel="noopener">${s.name}</a>`;
         })
         .join('');
     // Multiple copies for a seamless infinite loop on ultra-wide screens
     track.innerHTML = items + items + items + items;
+
+    // Track clicks: intercept every sponsor link and increment the counter in Supabase
+    track.querySelectorAll('a[data-sponsor-id]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const id = link.dataset.sponsorId;
+            if (id) {
+                // Fire-and-forget: don't block navigation
+                incrementSponsorClicks(id).catch(() => {});
+            }
+            // Navigation continues normally (target=_blank opens in new tab)
+        });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', async () => {

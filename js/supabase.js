@@ -111,3 +111,14 @@ export async function insertColaborador(payload) {
     return data;
 }
 
+/** Increment a sponsor's click counter by 1 */
+export async function incrementSponsorClicks(sponsorId) {
+    // Uses Supabase's RPC approach to safely do clicks = clicks + 1 atomically
+    const { error } = await db.rpc('increment_sponsor_clicks', { sponsor_id: sponsorId });
+    if (error) {
+        // Fallback: read current value then update (less safe under concurrency but works)
+        const { data } = await db.from('sponsors').select('clicks').eq('id', sponsorId).single();
+        const current = (data?.clicks || 0) + 1;
+        await db.from('sponsors').update({ clicks: current }).eq('id', sponsorId);
+    }
+}
